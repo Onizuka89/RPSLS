@@ -1,0 +1,23 @@
+#gestures{
+    padding-left: 0px;
+    margin-left: 0px;
+    left: 0px;
+    position: fixed;
+    bottom: 0;
+    height: 15%;
+    width: 100%;
+    display: block;
+}
+
+.block{
+    border-radius: 10px 10px 10px 10px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 64px;
+    height: 64px;
+}
+
+.block:active{
+}
