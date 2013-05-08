@@ -39,10 +39,11 @@ var checkForWinner = function(playerOne,playerTwo){
         result = checkRock(playerTwo);
     }else if(playerOne == "Spock"){
         result = checkSpock(playerTwo);
-    }else if(playerTwo == "Lizard"){
+    }else if(playerOne == "Lizard"){
         result = checkLizard(playerTwo);
     }else{
-        alert("Tsk Tsk Tsk. No cheating please!");
+        //alert("Tsk Tsk Tsk. No cheating please!");
+        alert(playerOne);
         return "";
     }
     if(playerMode == "Single"){
@@ -100,12 +101,27 @@ var checkLizard = function(against){
     return 0;
 };
 
-
+var getImageFor = function(hand){
+    if("Paper" == hand){
+        return "./img/Paper.png";
+    }else if("Rock" == hand){
+        return "./img/Rock.png";
+    }else if("Lizard" == hand){
+        return "./img/Lizzard.png";
+    }else if("Spock" == hand){
+        return "./img/Spock.png";
+    }else{
+        return "./img/Scizzors.png"
+    }
+};
 
 var selectedHand = function(hand){
+    // Player One
     if(playerMode == "Single"){
         var opposingHand = getRandomChoice();
         checkForWinner(hand,opposingHand);
+
+        // Player Two
     }else if(playerMode == "TwoPlayer"){
         currentTurn = currentTurn % 3;
         if(currentTurn == 1){
@@ -115,11 +131,16 @@ var selectedHand = function(hand){
             document.querySelector("#message").textContent = "Player One's turn";
             document.querySelector("#continue").setAttribute("style","display:none;");
             document.querySelector("#gestures").setAttribute("style","");
+            document.querySelector("#result").setAttribute("style","display:none");
         }else{
             // check winner
             playerTwo = hand;
             var winner = playerOne + " vs " + playerTwo;
             var w= checkForWinner(playerOne,playerTwo);
+
+            document.querySelector("#player img").setAttribute("src",getImageFor(playerOne));
+            document.querySelector("#opponent img").setAttribute("src",getImageFor(playerTwo));
+            document.querySelector("#result").setAttribute("style","");
             if(w == -1){
                 winner = "Player Two wins";
             }else if(w == 0){
