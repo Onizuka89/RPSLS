@@ -46,6 +46,7 @@ var checkForWinner = function(playerOne,playerTwo){
         alert(playerOne);
         return "";
     }
+    /*
     if(playerMode == "Single"){
         if(result == 1){
             alert("You won with " + playerOne + " against "+playerTwo);
@@ -55,6 +56,7 @@ var checkForWinner = function(playerOne,playerTwo){
             alert("You got a draw with " + playerOne + " against "+playerTwo);
         }
     }
+    */
     return result;
 };
 
@@ -119,8 +121,20 @@ var selectedHand = function(hand){
     // Player One
     if(playerMode == "Single"){
         var opposingHand = getRandomChoice();
-        checkForWinner(hand,opposingHand);
+        var result = checkForWinner(hand,opposingHand);
+        var msg;
+        if(result == 1){
+            msg = "You win!";
+        }else if(result == 0){
+            msg = "Draw";
+        }else{
+            msg = "You lose!";
+        }
 
+        document.querySelector("#message").textContent = msg;
+        document.querySelector("#result").setAttribute("style","");
+        document.querySelector("#player img").setAttribute("src",getImageFor(hand));
+        document.querySelector("#opponent img").setAttribute("src",getImageFor(opposingHand));
         // Player Two
     }else if(playerMode == "TwoPlayer"){
         currentTurn = currentTurn % 3;
@@ -198,7 +212,7 @@ var showGame = function(){
 setUpSinglePlayer = function(){
     hideGameSelect();
     playerMode = "Single";
-
+    document.querySelector("#message").textContent="Choose a gesture to play that hand.";
    showGame();
 };
 
