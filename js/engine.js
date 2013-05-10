@@ -190,6 +190,7 @@ setListeners = function(){
     document.querySelector("#lizard").addEventListener("click",selectedLizard);
     document.querySelector("#scissor").addEventListener("click",selectedScissors);
     document.querySelector("#continue").addEventListener("click",selectedHand);
+    document.querySelector("#refreshBar").addEventListener("click",refresh);
 };
 
 var hideGameSelect = function(){
@@ -223,5 +224,9 @@ setUpTwoPlayer = function(){
     document.querySelector("#message").textContent = "Player One's turn";
     showGame();
 };
+
+var refresh = function(){
+    window.location="./index.html";
+}
 
 document.addEventListener("DOMContentLoaded",setListeners);

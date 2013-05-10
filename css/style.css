@@ -1,4 +1,4 @@
-#gestures{
+#bottomMenu{
     padding-left: 0px;
     margin-left: 0px;
     left: 0px;
@@ -21,12 +21,12 @@
 #gestures div{
     margin-left: 0px;
     margin-right: 0px;
-
     padding-left: 0px;
     padding-right: 0px;
 }
 
 .block:active{
+    background-color: black;
 }
 
 #result div{
@@ -37,4 +37,9 @@
     -moz-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+}
+
+div#refreshBar{
+    text-align:center;
+    width:100%;
 }
