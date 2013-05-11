@@ -1,5 +1,5 @@
 {
-    "version":"1",
+    "version":"1.1",
     "name":"RPSLS",
     "description":"A game for playing Rock Paper Scissors Lizard Spock. Offers both singel and multiplayer",
     "launch_path":"/index.html",
