@@ -4,8 +4,8 @@
     "description":"A game for playing Rock Paper Scissors Lizard Spock. Offers both singel and multiplayer",
     "launch_path":"/index.html",
     "icons":{
-        "16":"img/16.png",
-        "128":"img/128.png"
+        "16":"/img/16.png",
+        "128":"/img/128.png"
     }
 
 }
